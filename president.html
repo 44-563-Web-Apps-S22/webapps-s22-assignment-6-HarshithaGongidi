@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Assignment 6 - President</title>
+ </head>
+<body>
+
+<h2>President guess by Harshitha Gongidi</h2>
+
+<form>
+    <label for="form1_secretstring">Enter the secret president name</label>
+    <input type ="password" id="form1_secretstring" name="form1_secretstring" value= GeorgeWashington> <br>
+
+    <label for="form1_check">Guess the president </label>
+    <input type ="text" id="form1_check" name="form1_check" autofocus> <br>
+
+    <input type="button" onclick="CheckGuess()" value="Check the guess">
+</form>
+
+
+<p id="result">wrong or correct counts </p>
+
+<script> 
+var correct
+function f(k) {
+   var correct = 0
+   var correct 
+}
+var wrong
+function f(k) {
+   var wrong = 0
+   var wrong
+}
+
+function CheckGuess(){
+    console.log("Getting form values")
+    secretstring = document.getElementById("form1_secretstring").value
+    check = document.getElementById("form1_check").value
+    confirmed = confirm("Are these the values? "+secretstring+" and "+check)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "You got it right"
+    } else {
+        out.innerHTML = "Wrong president"
+    }
+}
+</script>
+
+</body>
+</html> 
