@@ -34,5 +34,23 @@
     }
 </script>
 
+<form>
+    <label for="property">Enter a property name </label>
+    <input type ="text" id="property" name="property" value=engraved> <br>
+
+    <label for="value">Enter a value </label>
+    <input type ="text" id="value" name="value"> <br>
+
+    <input type="button" onclick="updateComputer()" value="Update the computer">
+</form>
+<p id="results">This text will be replaced </p>
+<script>
+function updateComputer(){
+    name = document.getElementById("property").value
+    values = document.getElementById("value").value
+    my_computer[name] = values
+    document.getElementById("results").innerHTML = JSON.stringify(my_computer)
+}
+</script>
 </body>
 </html>
