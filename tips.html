@@ -37,5 +37,41 @@ function tips(){
 }
 </script>
 
+
+<form>
+    <input type="radio" id="times1" name="calculation" value="times"   
+       checked onclick="chooseOp()" >
+    <label for="times1">*</label></br>
+  
+    <input type="radio" id="divide1" name="calculation" 
+       value="divide" onclick="chooseOp()">
+    <label for="divide1">/</label></br>
+  
+    <input type="radio" id="exponent1" name="calculation"   
+       value="exponent" onclick="chooseOp()">
+    <label for="exponent1">**</label></br>
+  </form>
+  <p id="calculation_result">This text will be replaced </p>
+
+  <script>
+      function chooseOp(){
+        amount_entered = document.getElementById("amount").value
+        tip_increased = document.getElementById("tip_increase").value
+        times = document.getElementById("times1").checked
+        divide = document.getElementById("divide1").checked
+        exponent = document.getElementById("exponent1").checked
+        result = document.getElementById("calculation_result")
+
+        if(times)
+            result.innerHTML = amount_entered * tip_increased
+                else if(divide)
+                    result.innerHTML = amount_entered / tip_increased
+                else if(exponent)
+                    result.innerHTML = amount_entered ** tip_increased
+
+}
+  </script>
+
+
 </body>
 </html> 
