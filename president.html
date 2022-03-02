@@ -9,10 +9,10 @@
 
 <form>
     <label for="form1_secretstring">Enter the secret president name</label>
-    <input type ="password" id="form1_secretstring" name="form1_secretstring" value= "GeorgeWashington"> <br>
+    <input type ="password" id="form1_secretstring"  value= "GeorgeWashington"> <br>
 
     <label for="form1_check">Guess the president </label>
-    <input type ="text" id="form1_check" name="form1_check" autofocus> <br>
+    <input type ="text" id="form1_check" autofocus> <br>
 
     <input type="button" onclick="CheckGuess()" value="Check the guess">
 </form>
@@ -28,15 +28,45 @@ function CheckGuess(){
     check = document.getElementById("form1_check").value
     out = document.getElementById("result")
 
-    if(secretstring = check){
+    if(secretstring == check){
         alert("You got it right");
         correct = correct+1;
 
-    }else{
+    }
+    else{
         alert("Wrong President");
         wrong = wrong+1;
     }
     out.innerHTML="Correct count: "+correct+'<br>'+" Worng count: "+wrong;
+}
+</script>
+<br>
+
+<div class="container">
+    <img id="Images" style="width:100px; height:100px;" alt="Dove" onclick="swapImage()" src="Images/dove.jpg">
+</div>
+
+<script>
+
+let UseImage = 1
+   function swapImage(){
+    switch(UseImage){
+        case 1: {
+            document.getElementById("Images"). src = "Images/dove.jpg";
+            UseImage = UseImage+1
+            break;
+        }
+        case 2:{
+            document.getElementById("Images").src = "Images/iagosparrow.jpg";
+            UseImage = UseImage+1
+            break
+        }
+        case 3:{
+            document.getElementById("Images").src = "Images/sunbird.jpg"; 
+            UseImage = UseImage+1
+            break
+        }  
+    }
 }
 </script>
 
