@@ -9,7 +9,7 @@
 
 <form>
     <label for="form1_secretstring">Enter the secret president name</label>
-    <input type ="password" id="form1_secretstring" name="form1_secretstring" value= GeorgeWashington> <br>
+    <input type ="password" id="form1_secretstring" name="form1_secretstring" value= "GeorgeWashington"> <br>
 
     <label for="form1_check">Guess the president </label>
     <input type ="text" id="form1_check" name="form1_check" autofocus> <br>
@@ -18,32 +18,25 @@
 </form>
 
 
-<p id="result">wrong or correct counts </p>
+<div id="result"></div>
 
 <script> 
-var correct
-function f(k) {
-   var correct = 0
-   var correct 
-}
-var wrong
-function f(k) {
-   var wrong = 0
-   var wrong
-}
+var correct = 0, wrong = 0;
 
 function CheckGuess(){
-    console.log("Getting form values")
     secretstring = document.getElementById("form1_secretstring").value
     check = document.getElementById("form1_check").value
-    confirmed = confirm("Are these the values? "+secretstring+" and "+check)
-    
     out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "You got it right"
-    } else {
-        out.innerHTML = "Wrong president"
+
+    if(secretstring = check){
+        alert("You got it right");
+        correct = correct+1;
+
+    }else{
+        alert("Wrong President");
+        wrong = wrong+1;
     }
+    out.innerHTML="Correct count: "+correct+'<br>'+" Worng count: "+wrong;
 }
 </script>
 
