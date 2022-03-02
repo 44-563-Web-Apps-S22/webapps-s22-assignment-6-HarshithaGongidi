@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Computing tips</title>
+ </head>
+<body>
+
+<h2>Harshitha Gongidi computes tips</h2>
+
+<form>
+    <label for="amount"> Enter a check amount </label>
+    <input type ="number" id="amount" name="amount" min=10 max=50 step=2 value=20> <br>
+
+    <label for="tip_increase"> Enter tip increase </label>
+    <input type ="number" id="tip_increase" name="tip_increase" min = 0 step = 0.01 value=0.01> <br>
+
+    <input type="button" onclick="tips()" value="Find tips">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+function tips(){
+    console.log("Find tips")
+    amount_entered = document.getElementById("amount").value
+    tip_increased = document.getElementById("tip_increase").value
+    var result = "Tip amounts by increase of " + tip_increased + " are: "
+    r = 0.1
+    out = document.getElementById("result")
+
+    for(i=1; i<=10; i++){
+        let x = (r + tip_increased * i)* amount_entered;
+        result += x + " "
+    }
+   out.innerHTML = result
+}
+</script>
+
+</body>
+</html> 
